@@ -26,7 +26,7 @@ public class ConnectionDriver {
         }
     }
     //        创建一个Connection代理，在commit时休眠100毫秒
-    public  static final Connection creatConnection(){
+    public  static final Connection createConnection(){
         return (Connection) Proxy.newProxyInstance(ConnectionDriver.class.getClassLoader(),ConnectionImpl.class.getInterfaces(),new ConnectionHandler(new ConnectionImpl()));
     }
 }

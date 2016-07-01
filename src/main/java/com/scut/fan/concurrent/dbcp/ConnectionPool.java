@@ -12,7 +12,7 @@ public class ConnectionPool {
     public ConnectionPool(int initialSize){
         if(initialSize>0){
             for (int i = 0; i < initialSize; i++) {
-                pool.addLast(ConnectionDriver.creatConnection());
+                pool.addLast(ConnectionDriver.createConnection());
             }
         }
     }
