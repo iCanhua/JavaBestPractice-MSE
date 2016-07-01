@@ -60,6 +60,7 @@ public class CyclicBarrier_Test {
 
     public static void main(String[] args) {
         CyclicBarrier_Test.testCyclicBarrier();
+
     }
 }
 
