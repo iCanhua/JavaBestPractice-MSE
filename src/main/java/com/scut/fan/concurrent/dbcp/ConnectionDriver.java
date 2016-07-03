@@ -20,7 +20,11 @@ public class ConnectionDriver {
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             if (method.getName().equals("commit")){
                 //这里应该实现接口实现的调用
+                connection.commit();
                 TimeUnit.MILLISECONDS.sleep(100);
+            }
+            if (method.getName().equals("close")){
+                connection.close();
             }
             return null;
         }
