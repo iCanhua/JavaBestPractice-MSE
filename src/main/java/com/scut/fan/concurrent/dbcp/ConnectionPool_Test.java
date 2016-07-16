@@ -62,6 +62,7 @@ public class ConnectionPool_Test {
                         try {
                             connection.createStatement();
                             connection.commit();
+                            connection.close();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }finally {

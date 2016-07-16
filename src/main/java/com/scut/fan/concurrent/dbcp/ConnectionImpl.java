@@ -35,7 +35,7 @@ public class ConnectionImpl implements Connection {
     }
 
     public void commit() throws SQLException {
-
+        System.out.println("调用了一次commit");
     }
 
     public void rollback() throws SQLException {
@@ -43,6 +43,7 @@ public class ConnectionImpl implements Connection {
     }
 
     public void close() throws SQLException {
+        System.out.println("调用了一次close");
 
     }
 
@@ -161,6 +162,7 @@ public class ConnectionImpl implements Connection {
     public Blob createBlob() throws SQLException {
         return null;
     }
+
 
     public NClob createNClob() throws SQLException {
         return null;

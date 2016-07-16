@@ -29,7 +29,7 @@ public class MailSendingTest {
 	
 	public MailSendingTest(String smtp){
         setSmtpHost(smtp);
-        createMimeMessage();		
+        createMimeMessage();
 	}
 	    /**
 	     * 设置邮件发�?服务�?
