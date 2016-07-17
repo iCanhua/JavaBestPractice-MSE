@@ -48,6 +48,7 @@ public class ConnectionPool {
             }else {
                 long future = System.currentTimeMillis()+ mills;
                 long remaining=mills;
+                //采用迭代方式，超时等待的去尝试竞争线程池资源
                 while (pool.isEmpty()&&remaining>0){
                     pool.wait(remaining);
                     remaining=future-System.currentTimeMillis();
