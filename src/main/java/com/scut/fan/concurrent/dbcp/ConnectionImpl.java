@@ -11,6 +11,7 @@ import java.util.concurrent.Executor;
  */
 public class ConnectionImpl implements Connection {
     public Statement createStatement() throws SQLException {
+        System.out.println("调用了一次createStatement!");
         return null;
     }
 
