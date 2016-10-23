@@ -36,6 +36,8 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
+
+        
         int[] array=new int[]{6,6,125,1,51,56,489,56,612,56,1256,1,5612,6,1256,16,2,612,63,26,16,12,9,126,12,62,3,2,92,3,126,2,6,5,6312,89};
         //quicksort(array,0,array.length-1);
         for (int i = 0; i < array.length; i++) {

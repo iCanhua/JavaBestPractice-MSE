@@ -40,9 +40,44 @@ public class Fibonacci {
         return FibN;
     }
 
+    /**
+     * 有一段楼梯台阶有15级台阶，以小明的脚力一步最多只能跨3级，请问小明登上这段楼梯有多少种不同的走法?
+     */
+    static class FibonacciPractice{
+        //递归实现
+        public static int  solution_v1(int n){
+            if (n==1){
+                return 1;
+            }else if (n==2){
+                return 2;
+            }else if (n==3){
+                return 4;
+            }
+            return solution_v1(n-1)+solution_v1(n-2)+solution_v1(n-3);
+        }
+        //循环实现
+        public static int solution_v2(int n){
+            int[] Fib={1,2,4};
+            if (n<4){
+                return Fib[n];
+            }
+            int FibN=7,FibNMinusOne=4,FibNMinusTwo=2,FibNMinesThree=1;
+            for (int i = 4; i <n+1; i++) {
+                FibN=FibNMinusOne+FibNMinusTwo+FibNMinesThree;
+                FibNMinesThree=FibNMinusTwo;
+                FibNMinusTwo=FibNMinusOne;
+                FibNMinusOne=FibN;
+            }
+            return FibN;
+        }
+
+    }
+
 
     public static void main(String[] args) {
         int i=30;
         System.out.println(fibonacci_v1(i)+":"+fibonacci_v2(i)+":"+fibonacci_v3(i));
+        int result=FibonacciPractice.solution_v2(15);
+        System.out.println(result);
     }
 }

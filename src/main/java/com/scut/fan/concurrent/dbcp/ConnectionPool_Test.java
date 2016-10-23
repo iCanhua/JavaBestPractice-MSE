@@ -79,6 +79,7 @@ public class ConnectionPool_Test {
                     count--;
                 }
             }
+            //该线程完成所有任务后，计数减一
             end.countDown();
         }
     }
