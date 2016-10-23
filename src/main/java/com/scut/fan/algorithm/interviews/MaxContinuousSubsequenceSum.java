@@ -1,4 +1,4 @@
-package com.scut.fan.algorithm;
+package com.scut.fan.algorithm.interviews;
 import java.util.Random;
 
 /**
