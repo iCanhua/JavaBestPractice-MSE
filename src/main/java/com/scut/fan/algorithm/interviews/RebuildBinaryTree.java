@@ -1,5 +1,7 @@
 package com.scut.fan.algorithm.interviews;
 
+import com.scut.fan.algorithm.TreeNode;
+
 /**
  * Created by FAN on 2016/7/17.
  */
@@ -11,14 +13,8 @@ public class RebuildBinaryTree {
         rebuildBinaryTree(pre,in);
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
-    public static TreeNode rebuildBinaryTree(int [] preorder,int [] inorder){
+    public static TreeNode rebuildBinaryTree(int [] preorder, int [] inorder){
         if (preorder.length!=inorder.length){
             return null;
         }
