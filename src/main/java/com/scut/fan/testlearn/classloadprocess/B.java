@@ -4,21 +4,29 @@ package com.scut.fan.testlearn.classloadprocess;
  * Created by FAN on 2016/10/27.
  */
 public class B extends A{
-    public int canhua;
-
+    protected int canhuaAge;
+    static String name ="fancanhua";
     static {
         System.out.println("类B的静态代码快");
     }
     {
         System.out.println("类B的非静态代码快");
     }
+
     B(){
-        System.out.println("B被实例化了");
+        super();
+        System.out.println("B被无参实例化了");
     }
+    B(int age){
+      this();
+        canhuaAge=age;
+    }
+
     public static void main(String[] args) {
 
         B b=new B();
-        System.out.println("实例对象成员也会被赋初始值:"+b.canhua);//实例对象成员也会被赋初始值
+        String str=b.name;
+        System.out.println("实例对象成员也会被赋初始值:"+b.canhuaAge);//实例对象成员也会被赋初始值
         int i=3;
         switch (i){
             case 1:i++;
@@ -28,6 +36,7 @@ public class B extends A{
                 default:i++;
         }
         System.out.println("switch实验结果："+i);
+
     }
 }
 
