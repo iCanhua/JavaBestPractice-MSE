@@ -12,9 +12,6 @@ public class A {
     {
         System.out.println("类A的非静态代码块");
     }
-    A(){
-        System.out.println("A被实例化了");
-    }
     A(int A){
         System.out.println("A被实例化了"+A);
     }
