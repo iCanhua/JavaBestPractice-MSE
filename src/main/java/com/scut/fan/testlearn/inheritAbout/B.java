@@ -1,4 +1,4 @@
-package com.scut.fan.testlearn.classloadprocess;
+package com.scut.fan.testlearn.inheritAbout;
 
 /**
  * Created by FAN on 2016/10/27.
@@ -7,23 +7,29 @@ public class B extends A{
     protected int canhuaAge;
     static String name ="fancanhua";
     static {
-        System.out.println("类B的静态代码快");
+        System.out.println("执行了类B的静态代码快");
     }
     {
-        System.out.println("类B的非静态代码快");
+        System.out.println("执行了类B的非静态代码快");
     }
 
     B(){
         super();
-        System.out.println("B被无参实例化了");
+        System.out.println("B被无参实例化了，但要写super构造方法必须放在第一行");
     }
     B(int age){
       this();
         canhuaAge=age;
     }
 
-    public static void main(String[] args) {
+    @Override
+    public B overRide(){
+        System.out.println("B重写了A的overRide: 执行B overRide method");
+        return null;
+    }
 
+    public static void main(String[] args) {
+        A a=new B();
         B b=new B();
         String str=b.name;
         System.out.println("实例对象成员也会被赋初始值:"+b.canhuaAge);//实例对象成员也会被赋初始值
@@ -36,6 +42,8 @@ public class B extends A{
                 default:i++;
         }
         System.out.println("switch实验结果："+i);
+
+        System.out.println("重写实验结果："+a.overRide());
 
     }
 }
