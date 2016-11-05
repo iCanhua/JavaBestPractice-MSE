@@ -10,11 +10,14 @@ public class B extends A{
         System.out.println("执行了类B的静态代码快");
     }
     {
+
         System.out.println("执行了类B的非静态代码快");
     }
 
     B(){
-        super();
+
+        super(5);//父类无无参构造方法，所以要显式调用父类有参构造！否则编译不通过
+
         System.out.println("B被无参实例化了，但要写super构造方法必须放在第一行");
     }
     B(int age){
