@@ -3,7 +3,7 @@ package com.scut.fan.algorithm;
 /**
  * Created by FAN on 2016/7/3.
  */
-public class QuickSort {
+public class Quicksort {
     public int[] Sort(int[] array){
         quicksort(array,0,array.length-1);
         return array;
@@ -44,7 +44,7 @@ public class QuickSort {
             System.out.print("|"+array[i]);
         }
         System.out.println("");
-        array=new QuickSort().Sort(array);
+        array=new Quicksort().Sort(array);
         for (int i = 0; i <array.length ; i++) {
             System.out.print("|"+array[i]);
         }
