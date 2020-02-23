@@ -21,7 +21,6 @@ public class AccountActivateExample extends AbstractEmailTemplate{
 
 	@Override
 	public EmailInfoFormat initEmailInfo() {
-
 		info.setContent("I love Soso for 1314");
 		return info;
 	}
@@ -31,10 +30,7 @@ public class AccountActivateExample extends AbstractEmailTemplate{
 		example.sendEmail();
 		
 	}
-	
-	
-	
-	
+
 	private static final String CHECK_CODE = "checkCode";
 	Properties prop = new Properties(); //配置文件读取�?
 	/**

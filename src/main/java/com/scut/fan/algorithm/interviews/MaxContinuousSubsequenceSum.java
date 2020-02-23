@@ -59,25 +59,27 @@ public class MaxContinuousSubsequenceSum {
     public static int maxSubSum3( int [ ] a )
     {
         int maxSum = 0;
-        int thisSum = 0;
+        int lastSum = 0;
 
-        for( int i = 0, j = 0; j < a.length; j++ )
+        for( int thisStart = 0, thisEnd = 0; thisEnd < a.length; thisEnd++ )
         {
-            thisSum += a[ j ];
+            int thisSum = lastSum +a[ thisEnd ];
+            if( thisSum>0 ){
+                lastSum = thisSum;
+            }else {
+              lastSum = 0;
+              thisStart =thisEnd+1;
+            }
             if( thisSum > maxSum )
             {
                 maxSum = thisSum;
-                seqStart = i;
-                seqEnd   = j;
-            }
-            else if( thisSum < 0 )
-            {
-                i = j + 1;
-                thisSum = 0;
+                seqStart = thisStart;
+                seqEnd   = thisEnd;
             }
         }
         return maxSum;
     }
+
 
 
     private static int maxSumRec( int [ ] a, int left, int right )
